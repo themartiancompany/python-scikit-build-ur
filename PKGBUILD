@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
+# Maintainer: Truocolo <truocolo@aol.com>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 # Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Martino Pilia <martino.pilia@gmail.com>
@@ -10,8 +14,21 @@ pkgdesc="Improved build system generator for CPython C, C++, Cython and Fortran 
 arch=(any)
 url="https://scikit-build.org"
 license=(MIT)
-depends=(cmake python-distro python-packaging python-setuptools python-wheel)
-makedepends=(git python-build python-installer python-hatchling python-hatch-vcs python-hatch-fancy-pypi-readme)
+depends=(
+  cmake
+  python-distro
+  python-packaging
+  python-setuptools
+  python-wheel
+)
+makedepends=(
+  git
+  python-build
+  python-installer
+  python-hatchling
+  python-hatch-vcs
+  python-hatch-fancy-pypi-readme
+)
 checkdepends=(
     cython
     gcc
@@ -50,3 +67,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
+
